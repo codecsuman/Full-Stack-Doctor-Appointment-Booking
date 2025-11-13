@@ -1,0 +1,103 @@
+services:
+  # ===========================================
+  # 🚀 BACKEND SERVICE (Node.js + Express)
+  # ===========================================
+  - name: prescripto-backend
+    type: web
+    env: node
+    rootDirectory: backend
+    region: singapore
+    plan: free
+
+    buildCommand: "npm install"
+    startCommand: "npm start"
+
+    envVars:
+      - key: PORT
+        value: 4000
+
+      - key: NODE_ENV
+        value: production
+
+      # Database
+      - key: MONGODB_URI
+        sync: false
+
+      # Cloudinary
+      - key: CLOUDINARY_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_SECRET_KEY
+        sync: false
+
+      # Admin Login
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+
+      # JWT Secret
+      - key: JWT_SECRET
+        sync: false
+
+      # Payment Variables
+      - key: PAYMENT_MODE
+        value: TEST
+      - key: CURRENCY
+        value: INR
+
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+
+      # URLs of Frontend & Admin (updated AFTER deployment)
+      - key: FRONTEND_URL
+        sync: false
+      - key: ADMIN_URL
+        sync: false
+
+  # ===========================================
+  # 🚀 FRONTEND SERVICE (Vite React)
+  # ===========================================
+  - name: prescripto-frontend
+    type: static
+    rootDirectory: frontend
+    buildCommand: "npm install && npm run build"
+    publishDirectory: dist
+    plan: free
+    region: singapore
+
+    envVars:
+      - key: VITE_BACKEND_URL
+        sync: false
+      - key: VITE_ENV
+        value: production
+      - key: VITE_APP_NAME
+        value: Prescripto
+      - key: VITE_ALLOWED_ORIGINS
+        value: "*"
+
+  # ===========================================
+  # 🚀 ADMIN SERVICE (Vite React)
+  # ===========================================
+  - name: prescripto-admin
+    type: static
+    rootDirectory: admin
+    buildCommand: "npm install && npm run build"
+    publishDirectory: dist
+    plan: free
+    region: singapore
+
+    envVars:
+      - key: VITE_BACKEND_URL
+        sync: false
+      - key: VITE_ENV
+        value: production
+      - key: VITE_APP_NAME
+        value: Prescripto Admin
+      - key: VITE_ALLOWED_ORIGINS
+        value: "*"
