@@ -13,6 +13,7 @@ import adminRouter from "./routes/adminRoute.js";
 const app = express();
 const port = process.env.PORT || 4000;
 
+// Get absolute dir path for backend folder
 const __dirname = path.resolve();
 
 // ------------------------
@@ -27,7 +28,7 @@ connectCloudinary();
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: "*", // no CORS need, because front+admin served by backend
     credentials: true,
   })
 );
@@ -39,27 +40,29 @@ app.use("/api/user", userRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/doctor", doctorRouter);
 
-// ------------------------
-// ADMIN PANEL
-// ------------------------
-app.use("/admin", express.static(path.join(__dirname, "../admin/dist")));
+// =============================================================
+//  SERVE ADMIN PANEL (from ../admin/dist)
+// =============================================================
+const adminPath = path.join(__dirname, "../admin/dist");
+app.use("/admin", express.static(adminPath));
 
 app.get("/admin/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../admin/dist/index.html"));
+  res.sendFile(path.join(adminPath, "index.html"));
 });
 
-// ------------------------
-// FRONTEND
-// ------------------------
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+// =============================================================
+//  SERVE FRONTEND REACT APP (from ../frontend/dist)
+// =============================================================
+const frontendPath = path.join(__dirname, "../frontend/dist");
+app.use(express.static(frontendPath));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 // ------------------------
 // START SERVER
 // ------------------------
 app.listen(port, () =>
-  console.log(`🚀 Backend + Frontend + Admin running on http://localhost:${port}`)
+  console.log(`🚀 Backend + Frontend + Admin running at http://localhost:${port}`)
 );
