@@ -54,7 +54,7 @@ services:
       - key: RAZORPAY_KEY_SECRET
         sync: false
 
-      # URLs of Frontend & Admin (updated AFTER deployment)
+      # URLs of Frontend & Admin
       - key: FRONTEND_URL
         sync: false
       - key: ADMIN_URL
@@ -64,10 +64,12 @@ services:
   # 🚀 FRONTEND SERVICE (Vite React)
   # ===========================================
   - name: prescripto-frontend
-    type: static
+    type: static_site
     rootDirectory: frontend
+
     buildCommand: "npm install && npm run build"
     publishDirectory: dist
+
     plan: free
     region: singapore
 
@@ -85,10 +87,12 @@ services:
   # 🚀 ADMIN SERVICE (Vite React)
   # ===========================================
   - name: prescripto-admin
-    type: static
+    type: static_site
     rootDirectory: admin
+
     buildCommand: "npm install && npm run build"
     publishDirectory: dist
+
     plan: free
     region: singapore
 
