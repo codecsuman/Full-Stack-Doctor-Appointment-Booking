@@ -1,81 +1,51 @@
 services:
-  # ===========================================
-  # 🚀 BACKEND SERVICE (Node.js + Express)
-  # ===========================================
+  # ================================
+  # 🚀 BACKEND (Node + Express)
+  # ================================
   - name: prescripto-backend
-    type: web
-    region: singapore
-    plan: free
-
+    runtime: node
     buildCommand: "cd backend && npm install"
     startCommand: "cd backend && npm start"
 
     envVars:
-      - key: RENDER_ROOT
-        value: backend
-
-      - key: PORT
-        value: 4000
-
-      - key: NODE_ENV
-        value: production
-
-      # Database
       - key: MONGODB_URI
         sync: false
-
-      # Cloudinary
       - key: CLOUDINARY_NAME
         sync: false
       - key: CLOUDINARY_API_KEY
         sync: false
       - key: CLOUDINARY_SECRET_KEY
         sync: false
-
-      # Admin Credentials
       - key: ADMIN_EMAIL
         sync: false
       - key: ADMIN_PASSWORD
         sync: false
-
-      # JWT Secret
       - key: JWT_SECRET
         sync: false
-
-      # Payments
       - key: PAYMENT_MODE
         value: TEST
       - key: CURRENCY
         value: INR
-
       - key: STRIPE_SECRET_KEY
         sync: false
       - key: RAZORPAY_KEY_ID
         sync: false
       - key: RAZORPAY_KEY_SECRET
         sync: false
-
-      # Frontend + Admin URLs (updated later)
       - key: FRONTEND_URL
         sync: false
       - key: ADMIN_URL
         sync: false
 
-  # ===========================================
-  # 🚀 FRONTEND SERVICE (Vite React)
-  # ===========================================
+  # ================================
+  # 🚀 FRONTEND (Vite React)
+  # ================================
   - name: prescripto-frontend
-    type: web
-    region: singapore
-    plan: free
-
+    runtime: node
     buildCommand: "cd frontend && npm install && npm run build"
-    startCommand: "cd frontend && npm run preview -- --port 10000" # static site served
+    startCommand: "npx serve -s frontend/dist -l 10000"
 
     envVars:
-      - key: RENDER_ROOT
-        value: frontend
-
       - key: VITE_BACKEND_URL
         sync: false
       - key: VITE_ENV
@@ -85,21 +55,15 @@ services:
       - key: VITE_ALLOWED_ORIGINS
         value: "*"
 
-  # ===========================================
-  # 🚀 ADMIN SERVICE (Vite React)
-  # ===========================================
+  # ================================
+  # 🚀 ADMIN PANEL (Vite React)
+  # ================================
   - name: prescripto-admin
-    type: web
-    region: singapore
-    plan: free
-
+    runtime: node
     buildCommand: "cd admin && npm install && npm run build"
-    startCommand: "cd admin && npm run preview -- --port 11000"
+    startCommand: "npx serve -s admin/dist -l 11000"
 
     envVars:
-      - key: RENDER_ROOT
-        value: admin
-
       - key: VITE_BACKEND_URL
         sync: false
       - key: VITE_ENV
