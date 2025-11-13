@@ -15,15 +15,12 @@ services:
     envVars:
       - key: PORT
         value: 4000
-
       - key: NODE_ENV
         value: production
 
-      # Database
       - key: MONGODB_URI
         sync: false
 
-      # Cloudinary
       - key: CLOUDINARY_NAME
         sync: false
       - key: CLOUDINARY_API_KEY
@@ -31,17 +28,14 @@ services:
       - key: CLOUDINARY_SECRET_KEY
         sync: false
 
-      # Admin Login
       - key: ADMIN_EMAIL
         sync: false
       - key: ADMIN_PASSWORD
         sync: false
 
-      # JWT Secret
       - key: JWT_SECRET
         sync: false
 
-      # Payment Variables
       - key: PAYMENT_MODE
         value: TEST
       - key: CURRENCY
@@ -54,7 +48,6 @@ services:
       - key: RAZORPAY_KEY_SECRET
         sync: false
 
-      # URLs of Frontend & Admin
       - key: FRONTEND_URL
         sync: false
       - key: ADMIN_URL
@@ -64,11 +57,12 @@ services:
   # 🚀 FRONTEND SERVICE (Vite React)
   # ===========================================
   - name: prescripto-frontend
-    type: static_site
+    type: web # <--- IMPORTANT
+    env: static # <--- REQUIRED FOR STATIC SITES
     rootDirectory: frontend
 
     buildCommand: "npm install && npm run build"
-    publishDirectory: dist
+    staticPublishPath: dist
 
     plan: free
     region: singapore
@@ -87,11 +81,12 @@ services:
   # 🚀 ADMIN SERVICE (Vite React)
   # ===========================================
   - name: prescripto-admin
-    type: static_site
+    type: web # <--- SAME FIX
+    env: static # <--- REQUIRED FOR VITE/REACT
     rootDirectory: admin
 
     buildCommand: "npm install && npm run build"
-    publishDirectory: dist
+    staticPublishPath: dist
 
     plan: free
     region: singapore
