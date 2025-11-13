@@ -1,0 +1,39 @@
+{
+  "name": "prescripto-backend",
+  "version": "1.0.0",
+  "description": "Prescripto Healthcare backend - Node.js + Express + MongoDB + Cloudinary",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "healthcare",
+    "appointment",
+    "mern",
+    "express",
+    "mongodb",
+    "cloudinary",
+    "prescripto"
+  ],
+  "author": "Bhagirathi & Suman",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.4",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.8.1",
+    "multer": "^1.4.5-lts.1",
+    "validator": "^13.11.0",
+    "stripe": "^12.18.0",
+    "razorpay": "^2.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
