@@ -12,54 +12,51 @@ import adminRouter from "./routes/adminRoute.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
-
 const __dirname = path.resolve();
 
-// ------------------------
-// CONNECT DATABASE & CLOUDINARY
-// ------------------------
+// Connect DB & Cloudinary
 connectDB();
 connectCloudinary();
 
-// ------------------------
-// MIDDLEWARE
-// ------------------------
+// Middleware
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      process.env.FRONTEND_URL,
+      process.env.ADMIN_URL,
+      "http://localhost:5173",
+      "http://localhost:5174",
+    ],
     credentials: true,
   })
 );
 
-// ------------------------
-// API ROUTES
-// ------------------------
+// API routes
 app.use("/api/user", userRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/doctor", doctorRouter);
 
 // ------------------------
-// ADMIN PANEL
+// Serve Admin first (important)
 // ------------------------
 app.use("/admin", express.static(path.join(__dirname, "../admin/dist")));
-
 app.get("/admin/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../admin/dist/index.html"));
 });
 
 // ------------------------
-// FRONTEND
+// Serve frontend (catch-all for app routes)
 // ------------------------
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
+// If you want to list specific frontend routes you can, but this catch-all works:
+// Serve index.html for any other path (so React Router works)
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
-// ------------------------
-// START SERVER
-// ------------------------
-app.listen(port, () =>
-  console.log(`🚀 Backend + Frontend + Admin running on http://localhost:${port}`)
-);
+// Start
+app.listen(port, () => {
+  console.log(`🚀 Server running at http://localhost:${port}`);
+});

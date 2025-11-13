@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "install:all": "npm-run-all install:frontend install:admin install:backend",
+    "start": "cd backend && npm start",
 
+    "dev": "npm-run-all -p dev:backend dev:frontend dev:admin",
+
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:admin": "cd admin && npm run dev",
+
+    "install:all": "npm-run-all install:backend install:frontend install:admin",
+    "install:backend": "cd backend && npm install",
     "install:frontend": "cd frontend && npm install",
     "install:admin": "cd admin && npm install",
-    "install:backend": "cd backend && npm install",
 
     "build": "npm-run-all build:frontend build:admin",
-
     "build:frontend": "cd frontend && npm run build",
     "build:admin": "cd admin && npm run build"
   },
