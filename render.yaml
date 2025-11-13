@@ -1,9 +1,11 @@
 services:
   # ================================
-  # 🚀 BACKEND (Node + Express)
+  # 🚀 BACKEND SERVICE
   # ================================
   - name: prescripto-backend
+    type: web
     runtime: node
+
     buildCommand: "cd backend && npm install"
     startCommand: "cd backend && npm start"
 
@@ -16,32 +18,39 @@ services:
         sync: false
       - key: CLOUDINARY_SECRET_KEY
         sync: false
+
       - key: ADMIN_EMAIL
         sync: false
       - key: ADMIN_PASSWORD
         sync: false
+
       - key: JWT_SECRET
         sync: false
+
       - key: PAYMENT_MODE
         value: TEST
       - key: CURRENCY
         value: INR
+
       - key: STRIPE_SECRET_KEY
         sync: false
       - key: RAZORPAY_KEY_ID
         sync: false
       - key: RAZORPAY_KEY_SECRET
         sync: false
+
       - key: FRONTEND_URL
         sync: false
       - key: ADMIN_URL
         sync: false
 
   # ================================
-  # 🚀 FRONTEND (Vite React)
+  # 🚀 FRONTEND (React + Vite Build)
   # ================================
   - name: prescripto-frontend
+    type: web
     runtime: node
+
     buildCommand: "cd frontend && npm install && npm run build"
     startCommand: "npx serve -s frontend/dist -l 10000"
 
@@ -56,10 +65,12 @@ services:
         value: "*"
 
   # ================================
-  # 🚀 ADMIN PANEL (Vite React)
+  # 🚀 ADMIN PANEL (React + Vite Build)
   # ================================
   - name: prescripto-admin
+    type: web
     runtime: node
+
     buildCommand: "cd admin && npm install && npm run build"
     startCommand: "npx serve -s admin/dist -l 11000"
 
