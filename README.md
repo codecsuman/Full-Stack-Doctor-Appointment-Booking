@@ -1,3 +1,4 @@
+
 # 🏥 Full-Stack Doctor Appointment Booking (MERN Stack)
 
 A complete medical appointment booking system built using the **MERN Stack** — allowing patients to browse doctors, book appointments, manage profiles, and allowing admins to manage doctors & appointments.
@@ -6,14 +7,23 @@ A complete medical appointment booking system built using the **MERN Stack** —
 
 ## 🌍 Live Demo
 
-### 🔗 User Website  
-https://full-stack-doctor-appointment-booki.vercel.app
+<p align="center">
 
-### 🔗 Admin Dashboard  
-https://full-stack-doctor-appointment-booki-eight.vercel.app
+  <a href="https://full-stack-doctor-appointment-booki.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/User%20Website-Live-blue?style=for-the-badge&logo=vercel" />
+  </a>
+  &nbsp;&nbsp;
 
-### 🔗 Backend API  
-https://your-render-backend-url.onrender.com
+  <a href="https://full-stack-doctor-appointment-booki-eight.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Admin%20Dashboard-Live-green?style=for-the-badge&logo=vercel" />
+  </a>
+  &nbsp;&nbsp;
+
+  <a href="https://your-render-backend-url.onrender.com" target="_blank">
+    <img src="https://img.shields.io/badge/Backend%20API-Live-purple?style=for-the-badge&logo=render" />
+  </a>
+
+</p>
 
 ---
 
