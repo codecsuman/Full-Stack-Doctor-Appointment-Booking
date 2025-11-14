@@ -1,159 +1,131 @@
-# 🏥 Full-Stack Doctor Appointment Booking (MERN Stack)
+🏥 Full-Stack Doctor Appointment Booking (MERN Stack)
 
-A complete, production-ready healthcare appointment system built using the **MERN Stack**.  
-Patients can browse doctors, book appointments, manage profiles — and admins can manage doctors and appointments through a secure dashboard.
+A modern, scalable, and production-ready Doctor Appointment Booking System built using the MERN stack.
+Patients can browse doctors, book appointments, update profiles, and manage bookings — while admins can manage doctors, appointments, and availability using a separate dashboard.
 
----
+This project is fully deployed and uses cloud-based services such as MongoDB Atlas, Cloudinary, and Render.
 
-## 🌍 Live Demo
+🚀 Live Demo
+<p align="center"> <a href="https://full-stack-doctor-appointment-booki.vercel.app" target="_blank"> <img src="https://img.shields.io/badge/User%20Website-Live-3b82f6?style=for-the-badge&logo=vercel&logoColor=white" /> </a> <a href="https://full-stack-doctor-appointment-booki-eight.vercel.app" target="_blank"> <img src="https://img.shields.io/badge/Admin%20Dashboard-Live-22c55e?style=for-the-badge&logo=vercel&logoColor=white" /> </a> <a href="https://your-render-backend-url.onrender.com" target="_blank"> <img src="https://img.shields.io/badge/Backend%20API-Live-a855f7?style=for-the-badge&logo=render&logoColor=white" /> </a> </p>
+✨ Features
+👤 User Features
 
-<p align="center">
+User login & registration with JWT
 
-  <a href="https://full-stack-doctor-appointment-booki.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/User%20Website-Live-3b82f6?style=for-the-badge&logo=vercel&logoColor=white" />
-  </a>
-  &nbsp;&nbsp;
+Browse doctors by speciality
 
-  <a href="https://full-stack-doctor-appointment-booki-eight.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Admin%20Dashboard-Live-22c55e?style=for-the-badge&logo=vercel&logoColor=white" />
-  </a>
-  &nbsp;&nbsp;
+View doctor availability
 
-  <a href="https://your-render-backend-url.onrender.com" target="_blank">
-    <img src="https://img.shields.io/badge/Backend%20API-Live-a855f7?style=for-the-badge&logo=render&logoColor=white" />
-  </a>
+Book appointment instantly
 
-</p>
+Secure payment flow (Stripe/Razorpay test mode)
 
----
+User profile management
 
-## 🚀 What This Website Does
+View appointment history
 
-This platform allows users to:
+Fully responsive UI
 
-### 🧑‍⚕ For Patients (Users)
-- Browse doctors across multiple specialities  
-- Check doctor availability  
-- Book appointments instantly  
-- Manage profile & view appointment history  
-- Login/Register with secure JWT authentication  
-- Enjoy a fully responsive, modern UI  
+🛠 Admin Features
 
-### 🛠 For Admins
-- Login securely using admin credentials  
-- Add new doctors with full profile & images  
-- Manage all doctor availability  
-- View all patient appointments  
-- Cancel or complete appointments  
-- Get analytics through admin dashboard  
+Admin login with secure authentication
 
-### 🌟 Why This Website Is Special  
-- Uses **Cloudinary** for image hosting  
-- Uses **MongoDB Atlas** for scalable cloud database  
-- Uses **Stripe & Razorpay** (test mode) for payment flow  
-- Fully responsive on mobile & desktop  
-- Complete MERN stack with clean architecture  
-- Frontend + Admin deployed on **Vercel**  
-- Backend deployed on **Render**  
+Add new doctors with full details (photo, speciality, fees)
 
----
+Manage doctor availability
 
-## 🎨 Colorful Tech Stack
+View all user appointments
 
-<div align="center">
+Approve, cancel or complete appointments
 
-<table>
-<tr>
-  <th style="background:#1e293b;color:#fff;padding:10px;">🖥 MERN</th>
-  <th style="background:#1e293b;color:#fff;padding:10px;">⚙ FULL STACK</th>
-  <th style="background:#1e293b;color:#fff;padding:10px;">🎨 FRONTEND</th>
-  <th style="background:#1e293b;color:#fff;padding:10px;">🛠 BACKEND</th>
-  <th style="background:#1e293b;color:#fff;padding:10px;">🗄 DATABASE</th>
-  <th style="background:#1e293b;color:#fff;padding:10px;">☁ CLOUD</th>
-</tr>
-<tr align="center">
-  <td style="background:#3b82f6;color:white;padding:10px;">React.js</td>
-  <td style="background:#6366f1;color:white;padding:10px;">Node.js</td>
-  <td style="background:#14b8a6;color:white;padding:10px;">Vite + TailwindCSS</td>
-  <td style="background:#f97316;color:white;padding:10px;">Express.js</td>
-  <td style="background:#10b981;color:white;padding:10px;">MongoDB</td>
-  <td style="background:#a855f7;color:white;padding:10px;">Cloudinary</td>
-</tr>
-</table>
+Admin dashboard with analytics
 
-</div>
-
----
-
-# ✨ Features
-
-## 👤 User Features
-- Secure login/signup  
-- Book appointments with preferred doctor  
-- View all appointment details  
-- Profile management  
-- Beautiful responsive UI  
-
-## 🛠 Admin Features
-- Admin login with protected routes  
-- Add/Edit/Delete doctors  
-- Manage doctor availability  
-- View/cancel appointments  
-- Dashboard with doctor/patient statistics  
-
----
-
-## ⚙ Environment Variables
-
-### 🔵 Backend (.env)
+🎨 Tech Stack
+<div align="center"> <table> <tr> <th style="background:#1e293b;color:#fff;padding:10px;">🖥 MERN</th> <th style="background:#1e293b;color:#fff;padding:10px;">⚙ Backend</th> <th style="background:#1e293b;color:#fff;padding:10px;">🎨 Frontend</th> <th style="background:#1e293b;color:#fff;padding:10px;">🛠 Tools</th> <th style="background:#1e293b;color:#fff;padding:10px;">☁ Cloud</th> </tr> <tr align="center"> <td style="background:#3b82f6;color:white;padding:10px;">MongoDB</td> <td style="background:#f97316;color:white;padding:10px;">Node.js + Express</td> <td style="background:#14b8a6;color:white;padding:10px;">React + Vite + TailwindCSS</td> <td style="background:#6366f1;color:white;padding:10px;">JWT, Axios</td> <td style="background:#a855f7;color:white;padding:10px;">Cloudinary, Render, Vercel</td> </tr> </table> </div>
+⚙️ Environment Variables
+🔵 Backend .env
 PORT=4000
 MONGODB_URI=your_mongodb_uri
+
 CLOUDINARY_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_key
-CLOUDINARY_SECRET_KEY=your_secret
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_SECRET_KEY=your_secret_key
+
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=yourpassword
+
 JWT_SECRET=yourjwtsecret
+
 FRONTEND_URL=https://full-stack-doctor-appointment-booki.vercel.app
 ADMIN_URL=https://full-stack-doctor-appointment-booki-eight.vercel.app
 
-shell
-Copy code
-
-### 🟣 Frontend (.env)
+🟣 Frontend .env
 VITE_BACKEND_URL=https://your-backend.onrender.com
 
-shell
-Copy code
-
-### 🔴 Admin (.env)
+🔴 Admin .env
 VITE_BACKEND_URL=https://your-backend.onrender.com
 
-yaml
-Copy code
+🧪 Run Locally
+📌 Clone Repo
+git clone https://github.com/your-username/your-repo.git
 
----
-
-## 🧪 Run Locally
-
-### Backend
-```sh
+▶ Backend Setup
 cd backend
 npm install
 npm run dev
-Frontend
-sh
-Copy code
+
+▶ Frontend Setup
 cd frontend
 npm install
 npm run dev
-Admin
-sh
-Copy code
+
+▶ Admin Dashboard Setup
 cd admin
 npm install
 npm run dev
 
+📦 Project Structure
+├── backend/
+├── frontend/
+├── admin/
+└── README.md
 
+🧩 API Highlights
 
+JWT-based authentication
 
+Appointment booking
+
+Doctor management
+
+Payment verification
+
+Role-based authorization
+
+Cloudinary image uploads
+
+MongoDB data models (Doctor, User, Appointment)
+
+🛡 Security
+
+Protected routes for admin & users
+
+Password hashing using bcrypt
+
+JWT authentication
+
+CORS protection
+
+Environment variable configuration
+
+📌 Deployment
+
+Frontend: Deployed on Vercel
+
+Admin Panel: Deployed on Vercel
+
+Backend API: Deployed on Render
+
+Image Uploads: Managed via Cloudinary
+
+Database: MongoDB Atlas (cloud hosted)
