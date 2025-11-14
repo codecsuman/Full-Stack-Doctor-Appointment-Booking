@@ -30,7 +30,7 @@ const Contact = () => {
           <div>
             <p className="font-extrabold text-xl text-primary border-b-2 border-primary pb-1 mb-3">OUR OFFICE</p>
             <p className="text-gray-600 leading-relaxed">
-              <span className="font-semibold">Prescripto HQ:</span> 54709 Willms Station <br /> Suite 350, Washington, USA
+              <span className="font-semibold">Prescripto HQ:</span> KOLKATA CIT MORE <br /> CITMORE KOLKATA INDIA -700105
             </p>
           </div>
 
@@ -38,8 +38,8 @@ const Contact = () => {
           <div>
             <p className="font-extrabold text-xl text-primary border-b-2 border-primary pb-1 mb-3">CONTACT</p>
             <p className="text-gray-600 leading-relaxed">
-              <span className="font-semibold">Tel:</span> (415) 555-0132 <br />
-              <span className="font-semibold">Email:</span> greatstackdev@gmail.com
+              <span className="font-semibold">Tel:</span>+91 8597376239<br />
+              <span className="font-semibold">Email:</span> sumanjhanp1@gmail.com
             </p>
           </div>
 

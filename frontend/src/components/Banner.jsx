@@ -6,12 +6,14 @@ const Banner = () => {
     const navigate = useNavigate();
 
     return (
-        // 1. Goo Level Banner Styling: Added a deep shadow for visual pop and removed unnecessary margins from the component's internal div (let the parent section handle margin).
+        // Goo Level Banner Styling: Added a deep shadow for visual pop.
         <div className="flex bg-primary rounded-2xl overflow-hidden shadow-2xl shadow-primary/40">
 
-            {/* Left: Text and CTA */}
-            <div className="flex-1 py-8 sm:py-12 md:py-16 lg:py-20 pl-6 sm:pl-10 md:pl-14 lg:pl-16 pr-6 md:pr-0">
-                <div className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+            {/* Left: Text and CTA (Increased Padding and Text Size) */}
+            {/* 💡 CHANGE: Increased vertical padding (py-10 up to py-28) */}
+            <div className="flex-1 py-10 sm:py-16 md:py-24 lg:py-28 pl-6 sm:pl-10 md:pl-14 lg:pl-16 pr-6 md:pr-0">
+                {/* 💡 CHANGE: Increased base and responsive text sizes (text-2xl up to text-6xl) */}
+                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
                     <p>Book Your Next Appointment</p>
                     <p className="mt-4 font-light">With 100+ Trusted Doctors</p>
                 </div>
@@ -43,7 +45,8 @@ const Banner = () => {
             </div>
 
             {/* Right: Image (Hidden on small screens) */}
-            <div className="hidden md:block md:w-1/2 lg:w-[400px] relative">
+            {/* 💡 CHANGE: Increased image container width on large screens (lg:w-[450px]) */}
+            <div className="hidden md:block md:w-1/2 lg:w-[450px] relative">
                 <img
                     // Ensures the image sits perfectly at the bottom edge of the banner
                     className="w-full absolute bottom-0 right-0 max-w-lg object-contain transform translate-y-1"
