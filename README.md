@@ -112,24 +112,25 @@ CLOUDINARY_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_key
 CLOUDINARY_SECRET_KEY=your_secret
 ADMIN_EMAIL=admin@example.com
-
 ADMIN_PASSWORD=yourpassword
 JWT_SECRET=yourjwtsecret
 FRONTEND_URL=https://full-stack-doctor-appointment-booki.vercel.app
-
 ADMIN_URL=https://full-stack-doctor-appointment-booki-eight.vercel.app
 
-
+shell
+Copy code
 
 ### 🟣 Frontend (.env)
 VITE_BACKEND_URL=https://your-backend.onrender.com
 
-
+shell
+Copy code
 
 ### 🔴 Admin (.env)
-ITE_BACKEND_URL=https://your-backend.onrender.com
+VITE_BACKEND_URL=https://your-backend.onrender.com
 
-
+yaml
+Copy code
 
 ---
 
@@ -140,37 +141,18 @@ ITE_BACKEND_URL=https://your-backend.onrender.com
 cd backend
 npm install
 npm run dev
-
-
----
 Frontend
+sh
+Copy code
 cd frontend
 npm install
 npm run dev
-
-
 Admin
+sh
+Copy code
 cd admin
 npm install
 npm run dev
-
-
-⭐ Support
-
-If you found this project helpful, please consider giving it a ⭐ star on GitHub!
-
----
-
-If you want:
-
-🔥 Animated gradient cover image  
-🔥 Dark-mode README  
-🔥 Screenshots section like Instagram  
-🔥 Logo banner  
-
-Just tell me:
-
-
 
 
 
