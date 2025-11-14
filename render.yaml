@@ -1,36 +1,53 @@
 services:
   - type: web
-    name: prescripto-backend
-    rootDirectory: backend
+    name: full-stack-doctor-app
     env: node
     region: singapore
-    buildCommand: >
-      cd .. &&
-      npm install &&
-      npm run build &&
-      cd backend &&
+    rootDir: backend
+
+    buildCommand: |
       npm install
-    startCommand: npm start
+      cd ../frontend && npm install && npm run build
+      cd ../admin && npm install && npm run build
+
+    startCommand: node server.js
+    autoDeploy: true
+
     envVars:
-      - key: NODE_ENV
-        value: production
+      # ----------- PORT -----------
       - key: PORT
         value: 4000
+
+      # ----------- DATABASE -----------
       - key: MONGODB_URI
         sync: false
+
+      # ----------- CLOUDINARY -----------
       - key: CLOUDINARY_NAME
         sync: false
       - key: CLOUDINARY_API_KEY
         sync: false
       - key: CLOUDINARY_SECRET_KEY
         sync: false
-      - key: JWT_SECRET
-        sync: false
+
+      # ----------- ADMIN LOGIN -----------
       - key: ADMIN_EMAIL
         sync: false
       - key: ADMIN_PASSWORD
         sync: false
+
+      # ----------- JWT SECRET -----------
+      - key: JWT_SECRET
+        sync: false
+
+      # ----------- PAYMENT -----------
       - key: PAYMENT_MODE
         value: TEST
       - key: CURRENCY
         value: INR
+
+      # ----------- FRONTEND + ADMIN URLS -----------
+      - key: FRONTEND_URL
+        value: https://full-stack-doctor-app.onrender.com
+      - key: ADMIN_URL
+        value: https://full-stack-doctor-app.onrender.com/admin
