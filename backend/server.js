@@ -13,13 +13,20 @@ import adminRouter from "./routes/adminRoute.js";
 const app = express();
 const port = process.env.PORT || 4000;
 
+// Connect DB & Cloudinary
 connectDB();
 connectCloudinary();
 
 app.use(express.json());
+
+// ✅ FIX: Allow only your Vercel domains
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "https://full-stack-doctor-appointment-booki.vercel.app",
+      "https://full-stack-doctor-appointment-booki-eight.vercel.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
