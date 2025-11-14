@@ -194,13 +194,16 @@ const MyAppointments = () => {
                             className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 sm:p-6 flex flex-col sm:flex-row gap-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.005]"
                         >
                             {/* Doctor Image & Status Badge */}
-                            <div className="w-full sm:w-1/4 flex-shrink-0">
-                                <img
-                                    className="w-full h-40 object-cover rounded-lg shadow-md"
-                                    src={item.docData.image}
-                                    alt={`Dr. ${item.docData.name}`}
-                                />
-                                <span className={`inline-block mt-3 px-3 py-1 text-xs font-semibold rounded-full ${statusClasses}`}>
+                            {/* 💡 CHANGE: New styling for image container (Aspect ratio, shadow, padding) */}
+                            <div className="w-full sm:w-1/4 flex-shrink-0 relative p-2 bg-white rounded-lg shadow-xl border border-gray-200">
+                                <div className="relative aspect-video sm:aspect-square overflow-hidden rounded-md">
+                                    <img
+                                        className="w-full h-full object-cover" // Ensure object-cover and full dimensions
+                                        src={item.docData.image}
+                                        alt={`Dr. ${item.docData.name}`}
+                                    />
+                                </div>
+                                <span className={`absolute top-4 right-4 z-10 px-3 py-1 text-xs font-semibold rounded-full ${statusClasses}`}>
                                     {statusText}
                                 </span>
                             </div>
